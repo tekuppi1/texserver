@@ -1,4 +1,4 @@
-# Texchange Web Service Client Section
+# _Texchange Web Service Client Section_
 <a href="http://texchg.com" target="_blank">私たちのサービス</a>
 のロジックを担う部分です。
 
@@ -7,7 +7,7 @@
 Logic section of 
 <a href="http://texchg.com" target="_blank">our service</a>.
 
-## About us
+## _About us_
 私たちはテクスチェンジ。テクスチェンジは、大学生に無料で中古教科書を提供し
 高額な教科書代の負担から学生を開放することで、
 学生の暮らしを豊かにすることを目標としています。
@@ -18,7 +18,7 @@ We are Texchange. We're aiming to help university students' lives
 by giving them secoundhand textbook from seniors so that 
 they are prevented from expensive textbook costs.
 
-## Main features
+## _Main features_
 * 在庫の検索
 * 本の予約
 
@@ -27,7 +27,7 @@ they are prevented from expensive textbook costs.
 * Search books
 * Reserve books
 
-## Installation
+## _Installation_
 以下の手順は、システムの総体をインストールするためのものです。
 
 1. Bootstrap のインストール
