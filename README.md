@@ -22,7 +22,7 @@ they are prevented from expensive textbook costs.
 * Reserve books
 
 ### Installation
-以下の手順は、システムの総体をインストールするためのものです。<br />
+以下の手順は、システムの総体をインストールするためのものです。
 1. Bootstrap のインストール
 2. Node.js のインストール
 3. 3. Gulp.js のインストール
