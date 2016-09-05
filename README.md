@@ -15,17 +15,23 @@ by giving them secoundhand textbook from seniors so that
 they are prevented from expensive textbook costs.
 
 ### Main features
-* 本を予約できるよ、みたいな
-クライアント側と同じ
+* 在庫の検索
+* 本の予約
 
-* Like "You can reserve books!"
-this part should be same as one on client page
+* Search books
+* Reserve books
 
 ### Installation
 以下の手順は、システムの総体をインストールするためのものです。<br />
-1. Bootstrap とかの導入方法をずらっと
-みたいな
+1. Bootstrap のインストール
+2. Node.js のインストール
+3. 3. Gulp.js のインストール
+4. PHP のバージョンを確認する
+5. データベースの構築
 
 Take following steps to install our whole system on your computers. <br />
-1. the installations like Bootstrap and so on
-blablabla
+1. Install Bootstrap
+2. Install Node.js
+3. Install Gulp.js
+4. Check installed PHP version
+5. Create a Database
