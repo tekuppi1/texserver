@@ -17,7 +17,7 @@ they are prevented from expensive textbook costs.
 ### Main features
 * 在庫の検索
 * 本の予約
-
+<br />
 * Search books
 * Reserve books
 
