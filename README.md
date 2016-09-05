@@ -30,7 +30,8 @@ they are prevented from expensive textbook costs.
 4. PHP のバージョンを確認する
 5. データベースの構築
 
-Take following steps to install our whole system on your computers. <br />
+Take following steps to install our whole system on your computers.
+
 1. Install Bootstrap
 2. Install Node.js
 3. Install Gulp.js
