@@ -1,4 +1,4 @@
-# _Texchange Web Service Client Section_
+# _Texchange Web Service Server Section_
 <a href="http://texchg.com" target="_blank">私たちのサービス</a>
 のロジックを担う部分です。
 
