@@ -19,7 +19,7 @@ they are prevented from expensive textbook costs.
 クライアント側と同じ
 
 * Like "You can reserve books!"
-this part should be same as one on client
+this part should be same as one on client page
 
 ### Installation
 以下の手順は、システムの総体をインストールするためのものです。<br />
