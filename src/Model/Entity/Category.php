@@ -4,16 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Book Entity
+ * Category Entity
  *
  * @property int $id
- * @property string $title
- * @property string $author
- * @property int $price
- * @property int $cat_id
- * @property string $img
- * @property string $isbn
- */class Book extends Entity
+ * @property string $university
+ * @property string $gakubu
+ * @property string $gakka
+ */class Category extends Entity
 {
 
     /**

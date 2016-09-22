@@ -231,7 +231,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'root',
             'password' => 'pass',
-            'database' => 'my_app',
+            'database' => 'texdata',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],

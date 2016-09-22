@@ -9,6 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Books Model
  *
+ * @property \Cake\ORM\Association\BelongsTo $Cats
+ * @property \Cake\ORM\Association\HasMany $Reservation
+ *
  * @method \App\Model\Entity\Book get($primaryKey, $options = [])
  * @method \App\Model\Entity\Book newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Book[] newEntities(array $data, array $options = [])
@@ -30,6 +33,16 @@ use Cake\Validation\Validator;
         parent::initialize($config);
 
         $this->table('books');
+        $this->displayField('title');
+        $this->primaryKey('id');
+
+        $this->belongsTo('Cats', [
+            'foreignKey' => 'cat_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Reservation', [
+            'foreignKey' => 'book_id'
+        ]);
     }
 
     /**
@@ -41,9 +54,31 @@ use Cake\Validation\Validator;
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->requirePresence('名前', 'create')            ->notEmpty('名前');
+            ->integer('id')            ->allowEmpty('id', 'create');
         $validator
-            ->requirePresence('著者', 'create')            ->notEmpty('著者');
+            ->requirePresence('title', 'create')            ->notEmpty('title');
+        $validator
+            ->requirePresence('author', 'create')            ->notEmpty('author');
+        $validator
+            ->integer('price')            ->requirePresence('price', 'create')            ->notEmpty('price');
+        $validator
+            ->requirePresence('img', 'create')            ->notEmpty('img');
+        $validator
+            ->requirePresence('isbn', 'create')            ->notEmpty('isbn');
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['cat_id'], 'Cats'));
+
+        return $rules;
     }
 }
