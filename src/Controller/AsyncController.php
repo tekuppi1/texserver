@@ -6,7 +6,7 @@ namespace App\Controller;
  
 use App\Controller\AppController;
  
-class AsyncSampleController extends AppController
+class AsyncController extends AppController
 {
     /**
      * レンダリングメソッド  
