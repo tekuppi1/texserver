@@ -15,7 +15,7 @@ class AsyncController extends AppController
      * @return {json} - 結果のjsonファイル
      *
      * @example
-     * localhost/texserver/AsyncSample/index/hoge?genre=aaa
+     * localhost/texserver/Async/index/hoge?genre=aaa
      */
     public function index($name = ''){
         $this->autoRender = false;
