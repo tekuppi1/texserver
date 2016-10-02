@@ -36,7 +36,7 @@ use Cake\Validation\Validator;
         $this->displayField('title');
         $this->primaryKey('id');
 
-        $this->belongsTo('Cats', [
+        $this->belongsTo('Category', [
             'foreignKey' => 'cat_id',
             'joinType' => 'INNER'
         ]);
@@ -51,20 +51,13 @@ use Cake\Validation\Validator;
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
-        $validator
-            ->requirePresence('title', 'create')            ->notEmpty('title');
-        $validator
-            ->requirePresence('author', 'create')            ->notEmpty('author');
-        $validator
-            ->integer('price')            ->requirePresence('price', 'create')            ->notEmpty('price');
-        $validator
-            ->requirePresence('img', 'create')            ->notEmpty('img');
-        $validator
-            ->requirePresence('isbn', 'create')            ->notEmpty('isbn');
+    public function validationDefault(Validator $validator) {
+        $validator->integer('id')->allowEmpty('id', 'create');
+        $validator->requirePresence('title', 'create')->notEmpty('title');
+        $validator->requirePresence('author', 'create')->notEmpty('author');
+        $validator->integer('price')->requirePresence('price', 'create')->notEmpty('price');
+        $validator->requirePresence('img', 'create')->notEmpty('img');
+        $validator->requirePresence('isbn', 'create')->notEmpty('isbn');
         return $validator;
     }
 
@@ -75,10 +68,8 @@ use Cake\Validation\Validator;
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['cat_id'], 'Cats'));
-
+    public function buildRules(RulesChecker $rules) {
+        $rules->add($rules->existsIn(['cat_id'], 'Category'));
         return $rules;
     }
 }

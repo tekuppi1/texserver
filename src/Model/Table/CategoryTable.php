@@ -25,8 +25,7 @@ use Cake\Validation\Validator;
      * @param array $config The configuration for the Table.
      * @return void
      */
-    public function initialize(array $config)
-    {
+    public function initialize(array $config) {
         parent::initialize($config);
 
         $this->table('category');
@@ -40,16 +39,11 @@ use Cake\Validation\Validator;
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
-        $validator
-            ->requirePresence('university', 'create')            ->notEmpty('university');
-        $validator
-            ->requirePresence('gakubu', 'create')            ->notEmpty('gakubu');
-        $validator
-            ->requirePresence('gakka', 'create')            ->notEmpty('gakka');
+    public function validationDefault(Validator $validator) {
+        $validator->integer('id')->allowEmpty('id', 'create');
+        $validator->requirePresence('university', 'create')->notEmpty('university');
+        $validator->requirePresence('gakubu', 'create')->notEmpty('gakubu');
+        $validator->requirePresence('gakka', 'create')->notEmpty('gakka');
         return $validator;
     }
 }

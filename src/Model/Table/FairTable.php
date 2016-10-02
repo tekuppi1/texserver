@@ -46,18 +46,12 @@ use Cake\Validation\Validator;
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
-        $validator
-            ->dateTime('start_date')            ->requirePresence('start_date', 'create')            ->notEmpty('start_date');
-        $validator
-            ->dateTime('ending_date')            ->requirePresence('ending_date', 'create')            ->notEmpty('ending_date');
-        $validator
-            ->requirePresence('place', 'create')            ->notEmpty('place');
-        $validator
-            ->dateTime('timestamp')            ->requirePresence('timestamp', 'create')            ->notEmpty('timestamp');
+    public function validationDefault(Validator $validator){
+        $validator->integer('id')->allowEmpty('id', 'create');
+        $validator->dateTime('start_date')->requirePresence('start_date', 'create')->notEmpty('start_date');
+        $validator->dateTime('ending_date')->requirePresence('ending_date', 'create')->notEmpty('ending_date');
+        $validator->requirePresence('place', 'create')->notEmpty('place');
+        $validator->dateTime('timestamp')->requirePresence('timestamp', 'create')->notEmpty('timestamp');
         return $validator;
     }
 }

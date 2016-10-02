@@ -52,12 +52,9 @@ use Cake\Validation\Validator;
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
-        $validator
-            ->integer('id')            ->allowEmpty('id', 'create');
-        $validator
-            ->dateTime('timestamp')            ->requirePresence('timestamp', 'create')            ->notEmpty('timestamp');
+    public function validationDefault(Validator $validator) {
+        $validator->integer('id')->allowEmpty('id', 'create');
+        $validator->dateTime('timestamp')->requirePresence('timestamp', 'create')->notEmpty('timestamp');
         return $validator;
     }
 
@@ -68,11 +65,9 @@ use Cake\Validation\Validator;
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-    public function buildRules(RulesChecker $rules)
-    {
+    public function buildRules(RulesChecker $rules) {
         $rules->add($rules->existsIn(['book_id'], 'Books'));
         $rules->add($rules->existsIn(['fair_id'], 'Fairs'));
-
         return $rules;
     }
 }
