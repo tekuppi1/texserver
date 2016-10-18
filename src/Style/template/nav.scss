@@ -7,13 +7,14 @@ nav {
   .nav-wrapper {
     background-color: #f2c479;
     padding: 0 1em;
-
+    user-select:none;
+    cursor: pointer;
 
     .brand-logo {
-      color: #757575;
+      color: #444444;
     }
     ul li a{
-      color: #757575;
+      color: #444444;
     }
   }
 }

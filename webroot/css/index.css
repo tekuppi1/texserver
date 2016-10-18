@@ -6,11 +6,16 @@ nav {
   margin-bottom: 2em; }
   nav .nav-wrapper {
     background-color: #f2c479;
-    padding: 0 1em; }
+    padding: 0 1em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer; }
     nav .nav-wrapper .brand-logo {
-      color: #757575; }
+      color: #444444; }
     nav .nav-wrapper ul li a {
-      color: #757575; }
+      color: #444444; }
 
 /**
  * メイン
@@ -29,11 +34,12 @@ nav {
   z-index: 1000;
   display: block;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
   background-color: #37474f;
-  border-right: 1px solid #eee;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
   @media screen and (max-width: 768px) {
     .tex_sidebar {
       display: none; } }

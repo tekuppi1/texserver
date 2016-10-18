@@ -11,11 +11,9 @@ $small:  "only screen and (max-width:640px)";
   z-index: 1000;
   display: block;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
   background-color: #37474f;
-  border-right: 1px solid #eee;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  user-select:none;
   @media screen and (max-width: 768px){display: none;}
 
   .logo {
