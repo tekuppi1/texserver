@@ -14,7 +14,10 @@ nav {
     cursor: pointer; }
     nav .nav-wrapper .brand-logo {
       color: #444444; }
-    nav .nav-wrapper ul li a {
+    nav .nav-wrapper ul li div {
+      height: 100%;
+      padding: 0 10px;
+      background-color: transparent;
       color: #444444; }
 
 /**
