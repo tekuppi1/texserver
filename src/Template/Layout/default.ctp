@@ -11,17 +11,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->meta('icon') ?>
 
     <?php /* stylesheet */ ?>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <?= $this->Html->css('libs/bootstrap.min.css') ?>
-    <?= $this->Html->css('libs/bootstrap-theme.min.css') ?>
-    <?= $this->Html->css('libs/materialize.min.css') ?>
-    <?= $this->Html->css('base.css') ?>
+    <?= $this->Html->css('../libs/css/bootstrap.min.css') ?>
+    <?= $this->Html->css('../libs/css/bootstrap-theme.min.css') ?>
+    <?= $this->Html->css('../libs/css/materialize.min.css') ?>
+    <?= $this->Html->css('index.css') ?>
+    <?= $this->Html->css('http://fonts.googleapis.com/icon?family=Material+Icons') ?>
 
     <?php /* script */ ?>
-    <?= $this->Html->script('libs/bootstrap.min.js') ?>
-    <?= $this->Html->script('libs/jquery-3.1.1.min.js') ?>
-    <?= $this->Html->script('libs/materialize.min.js') ?>
+    <?= $this->Html->script('../libs/js/jquery-3.1.1.min.js') ?>
+    <?= $this->Html->script('../libs/js/bootstrap.min.js') ?>
+    <?= $this->Html->script('../libs/js/materialize.min.js') ?>
     <?= $this->Html->script('main.js') ?>
 
     <?= $this->fetch('meta') ?>

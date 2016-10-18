@@ -7,7 +7,7 @@
 
 
   <!-- ロゴ -->
-  <div class="logo">Texchange<br>管理者ページ</div>
+  <div class="text-center logo">Texchange<br>管理者ページ</div>
 
   <!-- コンテンツボタン -->
   <div class="contents_button">
