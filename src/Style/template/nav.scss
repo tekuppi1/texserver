@@ -1,0 +1,19 @@
+/**
+ * ナビゲーションバー
+ */
+nav {
+  margin-bottom: 2em;
+
+  .nav-wrapper {
+    background-color: #f2c479;
+    padding: 0 1em;
+
+
+    .brand-logo {
+      color: #757575;
+    }
+    ul li a{
+      color: #757575;
+    }
+  }
+}
