@@ -16,13 +16,19 @@ use Cake\Validation\Validator;
         $this->table('category');
         $this->displayField('id');
         $this->primaryKey('id');
+        $this->hasMany('Category', [
+            'foreignKey' => 'parent_id'
+        ]);
     }
 
     public function validationDefault(Validator $validator) {
         $validator->integer('id')->allowEmpty('id', 'create');
-        $validator->requirePresence('university', 'create')->notEmpty('university');
-        $validator->requirePresence('gakubu', 'create')->notEmpty('gakubu');
-        $validator->requirePresence('gakka', 'create')->notEmpty('gakka');
+        $validator->requirePresence('name', 'create')->notEmpty('name');
         return $validator;
+    }
+
+    public function buildRules(RulesChecker $rules) {
+        $rules->add($rules->existsIn(['parent_id'], 'Category'));
+        return $rules;
     }
 }
