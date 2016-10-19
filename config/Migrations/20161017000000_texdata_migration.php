@@ -30,5 +30,21 @@ class TexdataMigration extends AbstractMigration {
         $table->addColumn('name', 'text', ['default' => null,'null' => false]);
         $table->addColumn('parent_id', 'integer', ['default' => null,'null' => true]);
         $table->create();
+
+        $table = $this->table('user');
+        $table->addColumn('username', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('password', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('role', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('created', 'datetime', ['default' => null,'null' => false]);
+        $table->addColumn('modified', 'datetime', ['default' => null,'null' => false]);
+        $table->create();
+
+        $table = $this->table('log');
+        $table->addColumn('code', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('path', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('agent', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('option', 'text', ['default' => null,'null' => false]);
+        $table->addColumn('timestamp', 'datetime', ['default' => null,'null' => false]);
+        $table->create();
     }
 }

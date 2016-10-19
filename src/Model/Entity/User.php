@@ -4,9 +4,9 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Category Entity
+ * Book Entity
  */
- class Category extends Entity {
+ class User extends Entity {
     protected $_accessible = [
         '*' => true,
         'id' => false
