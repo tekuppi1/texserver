@@ -44,6 +44,7 @@ class AppController extends Controller {
 
         //ログのグラフ表示用です。
         $this->viewGraph();
+        $this->loger("initialize", $this->name, "");
     }
 
     public function beforeRender(Event $event) {
