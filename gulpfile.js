@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const autoprefixer = require("gulp-autoprefixer");
+const babelify = require('babelify');
 const browserify = require("browserify");
 const source = require("vinyl-source-stream");
 const image = require('gulp-image');
@@ -14,6 +15,7 @@ gulp.task("sass", function() {
 
 gulp.task('script', function() {
   browserify({entries: ["./src/Script/main.js"]})
+    .transform(babelify, {presets: ['es2015']})
     .bundle()
     .pipe(source("main.js"))
     .pipe(gulp.dest("./webroot/js"))

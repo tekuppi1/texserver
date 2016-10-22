@@ -21,6 +21,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('../libs/js/jquery-3.1.1.min.js') ?>
     <?= $this->Html->script('../libs/js/bootstrap.min.js') ?>
     <?= $this->Html->script('../libs/js/materialize.min.js') ?>
+    <?= $this->Html->script('../libs/js/Chart.min.js') ?>
     <?= $this->Html->script('main.js') ?>
 
     <?= $this->fetch('meta') ?>

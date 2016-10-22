@@ -1,14 +1,64 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.texchart = texchart;
 /**
- * TexServerのスクリプトファイル
+ * ログのグラフ表示(chart.js使ってます)
+ * @param {array} label - キー
+ * @param {array} value - 値
  */
+
+function texchart() {
+  var label = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  var datalabel = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+
+  var ctx = document.getElementById("myChart");
+  var setdata = {
+    labels: label || ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [{
+      label: datalabel || "閲覧履歴",
+      borderColor: "rgba(75,192,192,1)",
+      pointBorderColor: "rgba(75,192,192,1)",
+      data: value || [1, 1, 1, 1, 1, 1, 1]
+    }]
+  };
+  var options = {
+    scales: {
+      yAxes: [{ ticks: { beginAtZero: true } }]
+    },
+    animation: true
+  };
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: setdata,
+    options: options,
+    animationSteps: 1000
+  });
+
+  console.log("texchart");
+}
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+var _texchart = require("./components/texchart");
 
 //------------------------------------------------------------------------
 // ページ読み込み時に実行したい処理
 //------------------------------------------------------------------------
-window.onload = function(){
+window.onload = function () {
 
-  $(".button-collapse").sideNav();
+  //$(".button-collapse").sideNav();
 
-}
-},{}]},{},[1]);
+  //viweMain1.ctpで取得
+  (0, _texchart.texchart)(chartLabel, chartValue);
+}; /**
+    * TexServerのスクリプトファイル
+    */
+
+},{"./components/texchart":1}]},{},[2]);
