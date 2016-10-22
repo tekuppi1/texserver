@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * 抽象コントローラ
+ */
 namespace App\Controller;
 
 use Cake\Controller\Controller;
