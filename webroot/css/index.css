@@ -62,6 +62,12 @@ nav {
     color: rgba(255, 255, 255, 0.56);
     background-color: rgba(255, 255, 255, 0); }
 
+/**
+ * users テンプレート用
+ */
+.users.form .role {
+  padding: 0 0.75rem; }
+
 /* Techange team 2016 */
 body {
   margin: 0;

@@ -9,12 +9,12 @@ use Cake\Validation\Validator;
 /**
  * Log Model
  */
-class UserTable extends Table {
+class UsersTable extends Table {
 
     public function initialize(array $config) {
         parent::initialize($config);
 
-        $this->table('user');
+        $this->table('users');
         $this->displayField('id');
         $this->primaryKey('id');
     }
@@ -24,12 +24,17 @@ class UserTable extends Table {
         $validator->requirePresence('username', 'create')->notEmpty('username');
         $validator->requirePresence('password', 'create')->notEmpty('password');
         $validator->requirePresence('role', 'create')->notEmpty('role');
-        $validator->dateTime('created')->requirePresence('timestamp', 'create')->notEmpty('created');
-        $validator->dateTime('modified')->requirePresence('timestamp', 'create')->notEmpty('modified');
         return $validator;
     }
 
     public function buildRules(RulesChecker $rules) {
+        /*$rules->add($rules->isUnique(['username']), [
+            'message' => __('既に使われているユーザ名です。')
+        ]);*/
+        $rules->add($rules->isUnique(['username']), 'username', [
+            'errorField' => 'status',
+            'message' => __('既に使われているユーザ名です。')
+        ]);
         return $rules;
     }
 }

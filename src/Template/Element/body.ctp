@@ -13,6 +13,9 @@
     <!-- ナビゲーションバー -->
     <?php echo $this->element('nav/viewNavigation'); ?>
 
+    <!-- フラッシュ出力 -->
+    <?= $this->Flash->render() ?>
+
     <!-- パスコンテンツ -->
     <div class="tex_pass_content"><?= $this->fetch('content') ?></div>
 

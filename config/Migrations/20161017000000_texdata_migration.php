@@ -31,7 +31,7 @@ class TexdataMigration extends AbstractMigration {
         $table->addColumn('parent_id', 'integer', ['default' => null,'null' => true]);
         $table->create();
 
-        $table = $this->table('user');
+        $table = $this->table('users');
         $table->addColumn('username', 'text', ['default' => null,'null' => false]);
         $table->addColumn('password', 'text', ['default' => null,'null' => false]);
         $table->addColumn('role', 'text', ['default' => null,'null' => false]);
