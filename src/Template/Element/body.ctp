@@ -21,17 +21,12 @@
 
     <!-- メインコンテンツ -->
     <?php
-      // 画面選択
-      /*
-      $VIEW_NUM = 1;
-      switch($VIEW_NUM) {
-        case 1 : echo $this->element('main/viewMain1'); break;
-        case 2 : echo $this->element('main/viewMain2'); break;
-        case 3 : echo $this->element('main/viewMain3'); break;
-      }*/
-      echo $this->element('main/viewMain1');
-      echo $this->element('main/viewMain2');
-      echo $this->element('main/viewMain3');
+      // ログイン前ならログイン画面以外は出さない。
+      if($this->name != "Users") {
+        echo $this->element('main/viewMain1');
+        echo $this->element('main/viewMain2');
+        echo $this->element('main/viewMain3');
+      }
     ?>
 
   </div>
