@@ -43,7 +43,7 @@ class UsersController extends AppController {
                 if($status["username"])
                     $this->Flash->error(__($users->errors()['status']["username"]));
                 else
-                     $this->Flash->error(__('予期せぬエラーです。'));
+                    $this->Flash->error(__('予期せぬエラーです。'));
             } else {
                 $this->Flash->error(__('ユーザーが追加できません！'));
             }

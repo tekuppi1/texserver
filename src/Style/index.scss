@@ -1,6 +1,5 @@
-@import "template/nav";
-@import "template/main";
-@import "template/side";
+@import "template/index";
+@import "admin/index";
 @import "users/index";
 
 /* Techange team 2016 */
@@ -9,4 +8,8 @@ body {
 	padding: 0;
 	background-color: #fcfcfc;
   font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+}
+
+.card-panel{
+  position: relative;
 }

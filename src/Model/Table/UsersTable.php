@@ -19,6 +19,7 @@ class UsersTable extends Table {
         $this->primaryKey('id');
     }
 
+    // テーブルのバリデーション
     public function validationDefault(Validator $validator) {
         $validator->integer('id')->allowEmpty('id', 'create');
         $validator->requirePresence('username', 'create')->notEmpty('username');
@@ -27,10 +28,8 @@ class UsersTable extends Table {
         return $validator;
     }
 
+    // 登録時のバリデーション
     public function buildRules(RulesChecker $rules) {
-        /*$rules->add($rules->isUnique(['username']), [
-            'message' => __('既に使われているユーザ名です。')
-        ]);*/
         $rules->add($rules->isUnique(['username']), 'username', [
             'errorField' => 'status',
             'message' => __('既に使われているユーザ名です。')

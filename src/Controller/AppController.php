@@ -9,11 +9,11 @@ class AppController extends Controller {
 
     /** Authentication
      * 認可処理をpassさせる場合はここに。
-     *
+     */
     public function beforeFilter(Event $event) {
-        $this->Auth->allow(['index', 'view', 'display']);
+        //$this->Auth->allow(['index', 'view', 'display']);
+        $this->set('auth',$this->Auth);
     }
-    */
 
     public function initialize() {
         $this->loadComponent('Flash');
