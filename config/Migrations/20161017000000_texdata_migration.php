@@ -40,11 +40,11 @@ class TexdataMigration extends AbstractMigration {
         $table->create();
 
         $table = $this->table('log');
-        $table->addColumn('code', 'text', ['default' => null,'null' => false]);
-        $table->addColumn('path', 'text', ['default' => null,'null' => false]);
-        $table->addColumn('agent', 'text', ['default' => null,'null' => false]);
-        $table->addColumn('option', 'text', ['default' => null,'null' => false]);
-        $table->addColumn('timestamp', 'datetime', ['default' => null,'null' => false]);
+        $table->addColumn('code', 'text', ['default' => null,'null' => true]);
+        $table->addColumn('path', 'text', ['default' => null,'null' => true]);
+        $table->addColumn('agent', 'text', ['default' => null,'null' => true]);
+        $table->addColumn('other', 'text', ['default' => null,'null' => true]);
+        $table->addColumn('timestamp', 'datetime', ['default' => null,'null' => true]);
         $table->create();
     }
 }

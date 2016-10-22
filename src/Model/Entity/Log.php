@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Book Entity
+ * Log Entity
  */
  class Log extends Entity {
     protected $_accessible = [

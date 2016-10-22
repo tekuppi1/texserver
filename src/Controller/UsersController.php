@@ -29,10 +29,13 @@ class UsersController extends AppController {
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $users = $this->Users->patchEntity($user, $this->request->data);
+
+            //param set
             if($user->role == null) $user->role = "texMember";
             $user->created = Time::now();
             $user->modified = Time::now();
             if ($save_status = $this->Users->save($user)) {
+                $this->loger("success add user", "users/index", "");
                 $this->Flash->success(__('ユーザを追加しました！'));
                 return $this->redirect(['action' => 'login']);
             }

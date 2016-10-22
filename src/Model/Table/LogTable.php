@@ -21,12 +21,11 @@ class LogTable extends Table {
 
     public function validationDefault(Validator $validator) {
         $validator->integer('id')->allowEmpty('id', 'create');
-        $validator->requirePresence('code', 'create')->notEmpty('code');
-        $validator->requirePresence('path', 'create')->notEmpty('path');
-        $validator->requirePresence('agent', 'create')->notEmpty('agent');
-        $validator->requirePresence('option', 'create')->notEmpty('option');
-        $validator->requirePresence('agent', 'create')->notEmpty('agent');
-        $validator->dateTime('timestamp')->requirePresence('timestamp', 'create')->notEmpty('timestamp');
+        $validator->requirePresence('code', 'create')->allowEmpty('code');
+        $validator->requirePresence('path', 'create')->allowEmpty('path');
+        $validator->requirePresence('agent', 'create')->allowEmpty('agent');
+        $validator->requirePresence('other', 'create')->allowEmpty('other');
+        $validator->dateTime('timestamp')->requirePresence('timestamp', 'create');
         return $validator;
     }
 

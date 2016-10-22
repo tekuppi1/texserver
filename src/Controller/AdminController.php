@@ -8,11 +8,7 @@ class AdminController extends AppController {
 
     public function index() {
         $this->set('title_for_layout', 'ダッシュボード | 管理画面');
+        $this->loger("success", "admin/index", "");
     }
 
-    public function login() {
-    }
- 
-    public function logout() {
-    }
 }
