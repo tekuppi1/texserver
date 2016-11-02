@@ -1,0 +1,28 @@
+//function
+
+//**
+// * 黄金比に変換
+// * @param {size} 単位何でもよろし
+// * @param {integer} 倍率
+// */
+@function gold($size, $ration) {
+  $r: 1;
+  @for $i from 1 through $ration {
+    $r: $r*1.618;
+  }
+  @return $size*$r;
+}
+
+//**
+// * 黄金比に逆変換
+// * @param {size} 単位何でもよろし
+// * @param {integer} 倍率
+// */
+@function _gold($size, $ration) {
+  $r: 1;
+  @for $i from 1 through $ration {
+    $r: $r/1.618;
+  }
+  @return $size*$r;
+}
+

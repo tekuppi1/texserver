@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/**
+ * ナビゲーションバー
+ */
+nav {
+  background-color: #f2c479;
+  background-color: #f2ba79; }
+  nav .nav-wrapper {
+    padding: 0 1em;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    cursor: pointer; }
+    nav .nav-wrapper .brand-logo {
+      width: 100%;
+      height: 90%;
+      color: #565656;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      background-image: url("../img/logo.png");
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: center; }
+    nav .nav-wrapper ul li div {
+      height: 100%;
+      padding: 0 10px;
+      background-color: transparent;
+      color: #FFFFFF; }
+  nav.acount {
+    height: 21.391px;
+    line-height: 21.391px;
+    background-color: #f7d8a7;
+    color: #000; }
+
+.col-sm-12.nav {
+  margin-bottom: 2em; }
+
+/**
+ * メイン
+ */
+.tex_main {
+  padding: 0; }
+
+/**
+ * サイドバー
+ */
+.tex_sidebar {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 0;
+  background-color: #37474f;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  @media screen and (max-width: 768px) {
+    .tex_sidebar {
+      display: none; } }
+  .tex_sidebar .logo {
+    width: 100%;
+    padding: 2em 0px;
+    font-size: 1.2em;
+    text-align: center;
+    color: #EEE;
+    background-color: #263238; }
+  .tex_sidebar .contents_button div {
+    width: 100%;
+    padding: 20px 0px;
+    margin: 1px 0;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.56);
+    background-color: rgba(255, 255, 255, 0); }
+
+/**
+ * 管理者用画面
+ */
+.col-sm-12.admin .card-panel {
+  padding-bottom: 60px; }
+
+.col-sm-12.admin .logout {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
+
+/**
+ * users テンプレート用
+ */
+.users.form .role {
+  padding: 0 0.75rem; }
+
+/* Techange team 2016 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfc;
+  font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif; }
+
+.card-panel {
+  position: relative; }

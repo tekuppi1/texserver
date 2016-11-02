@@ -24,7 +24,9 @@ class InitController extends AppController {
     //Get to Model
     // http://book.cakephp.org/3.0/ja/orm/retrieving-data-and-resultsets.html
     $Books = TableRegistry::get('books')->find('all');
-    $Category = TableRegistry::get('Category')->find('all');
+    $Category = TableRegistry::get('category')->find('all');
+    //$user = TableRegistry::get('user')->find('all');
+    //$log = TableRegistry::get('log')->find('all');
 
     //Get to query
     $requestQuery  = $this->request->query;
