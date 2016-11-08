@@ -4,8 +4,6 @@
 <!-- ============================================ -->
 <p>出品用ページ</p>
 
-<body>
-
   <div class="container ISBN">
     <form action="#">
       <p>
@@ -52,11 +50,13 @@
     </form>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-  <script src="js/init.js"></script>
-</body>
 
+<script>
+/*↓ドロップダウン*/
+	  $(document).ready(function() {
+	    $('select').material_select();
+	  });
+</script>
 
 <!-- ============================================ -->
 </div></div>
