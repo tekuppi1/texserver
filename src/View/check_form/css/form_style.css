@@ -1,0 +1,40 @@
+html {5
+    font: normal 13px arial,sans-serif;
+}
+.row{
+    border-left-width: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.book{
+    text-align: center;
+}
+
+.Yes_button{
+    width: 150px;
+    box-shadow: 0 1px 0 0 #000000;
+}
+
+.No_button{
+    width: 150px;
+    box-shadow: 0 1px 0 0 #000000;
+}
+
+.check-form_01{
+    background-color: floralwhite;
+	padding: 10px !important;
+	vertical-align: middle;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+}
+
+img.book-picture{
+    width: 100px !important;
+    margin: 10px auto;
+}
