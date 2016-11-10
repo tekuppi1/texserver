@@ -4,6 +4,36 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.addFadein = addFadein;
+exports.addFadeout = addFadeout;
+//--------------------------
+// アニメーションメソッド
+//--------------------------
+
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadein(name) {
+  $(name).addClass("fadein");
+  $(name).removeClass("fadeout");
+}
+
+/**
+ * フェードインクラスの付加
+ * @param {string} name - 適用するタグ名
+ */
+function addFadeout(name) {
+  $(name).addClass("fadeout");
+  $(name).removeClass("fadein");
+}
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.texchart = texchart;
 /**
  * ログのグラフ表示(chart.js使ってます)
@@ -43,22 +73,38 @@ function texchart() {
   console.log("texchart");
 }
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 var _texchart = require("./components/texchart");
 
+var _animation = require("./components/animation");
+
 //------------------------------------------------------------------------
 // ページ読み込み時に実行したい処理
 //------------------------------------------------------------------------
+/**
+ * TexServerのスクリプトファイル
+ */
+
 window.onload = function () {
 
   //$(".button-collapse").sideNav();
 
-  //viweMain1.ctpで取得
+  // viweMain1.ctpで取得
   (0, _texchart.texchart)(chartLabel, chartValue);
-}; /**
-    * TexServerのスクリプトファイル
-    */
 
-},{"./components/texchart":1}]},{},[2]);
+  // 出品確認ダイアログの表示
+  $('.show_exhibit_dialog').click(function () {
+    console.log("show exhibit dialog");
+    (0, _animation.addFadein)('#exhibit_dialog');
+  });
+
+  // 出品確認ダイアログの非表示
+  $('.hide_exhibit_dialog').click(function () {
+    console.log("hide exhibit dialog");
+    (0, _animation.addFadeout)('#exhibit_dialog');
+  });
+};
+
+},{"./components/animation":1,"./components/texchart":2}]},{},[3]);
