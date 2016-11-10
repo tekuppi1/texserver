@@ -15,6 +15,8 @@
   <a class="hide_exhibit_dialog modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
 </div>
 
+<a id="close-button" class="hide_exhibit_dialog btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>
+
 <!--↑　自由に変えてちょ！ ↑-->
 
 <!-- ============================================ -->

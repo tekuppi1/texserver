@@ -3,12 +3,17 @@
  */
 #exhibit_dialog {
   width: 0%;
+  opacity: 0;
   display: block;
+  overflow: initial;
 
-
-
+  #close-button{
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    left: auto;
+  }
 }
-
 
 //======================================================================
 // アニメーション
