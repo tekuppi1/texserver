@@ -6,6 +6,7 @@
   opacity: 0;
   display: block;
   overflow: initial;
+  z-index: 2000;
 
   #close-button{
     position: absolute;
@@ -13,6 +14,16 @@
     top: -12px;
     left: auto;
   }
+}
+#exhibit_dialog_overlay {
+  position: fixed;
+  width: 0%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 1999;
+  top: 0;
+  left: 0;
 }
 
 //======================================================================
@@ -24,14 +35,30 @@
 #exhibit_dialog.fadeout {
   animation: fadeOut 1s ease 0s 1 forwards;
 }
+#exhibit_dialog_overlay.fadein {
+  animation: fadeInOverlay 0.5s ease 0s 1 forwards;
+}
+#exhibit_dialog_overlay.fadeout {
+  animation: fadeOutOverlay 1s ease 0s 1 forwards;
+}
 
 @keyframes fadeIn {
-    0%   {width: 0%;  opacity:   0;}
+    0%   {width:  0%;  opacity:  0;}
     1%   {width: 80%; opacity:   0;}
     100% {width: 80%; opacity: 1.0;}
 }
 @keyframes fadeOut {
     0%   {width: 80%; opacity: 1.0;}
     99%  {width: 80%; opacity:   0;}
-    100% {width: 0%;  opacity:   0;}
+    100% {width:  0%;  opacity:  0;}
+}
+@keyframes fadeInOverlay {
+    0%   {width:   0%;  opacity:  0;}
+    1%   {width: 100%; opacity:   0;}
+    100% {width: 100%; opacity: 0.5;}
+}
+@keyframes fadeOutOverlay {
+    0%   {width: 100%; opacity: 0.5;}
+    99%  {width: 100%; opacity:   0;}
+    100% {width:   0%;  opacity:  0;}
 }

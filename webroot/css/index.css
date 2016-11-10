@@ -101,7 +101,25 @@ nav {
  */
 #exhibit_dialog {
   width: 0%;
-  display: block; }
+  opacity: 0;
+  display: block;
+  overflow: initial;
+  z-index: 2000; }
+  #exhibit_dialog #close-button {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    left: auto; }
+
+#exhibit_dialog_overlay {
+  position: fixed;
+  width: 0%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 1999;
+  top: 0;
+  left: 0; }
 
 #exhibit_dialog.fadein {
   -webkit-animation: fadeIn 0.5s ease 0s 1 forwards;
@@ -110,6 +128,14 @@ nav {
 #exhibit_dialog.fadeout {
   -webkit-animation: fadeOut 1s ease 0s 1 forwards;
           animation: fadeOut 1s ease 0s 1 forwards; }
+
+#exhibit_dialog_overlay.fadein {
+  -webkit-animation: fadeInOverlay 0.5s ease 0s 1 forwards;
+          animation: fadeInOverlay 0.5s ease 0s 1 forwards; }
+
+#exhibit_dialog_overlay.fadeout {
+  -webkit-animation: fadeOutOverlay 1s ease 0s 1 forwards;
+          animation: fadeOutOverlay 1s ease 0s 1 forwards; }
 
 @-webkit-keyframes fadeIn {
   0% {
@@ -150,6 +176,50 @@ nav {
     opacity: 1.0; }
   99% {
     width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
+@-webkit-keyframes fadeInOverlay {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 100%;
+    opacity: 0; }
+  100% {
+    width: 100%;
+    opacity: 0.5; } }
+
+@keyframes fadeInOverlay {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 100%;
+    opacity: 0; }
+  100% {
+    width: 100%;
+    opacity: 0.5; } }
+
+@-webkit-keyframes fadeOutOverlay {
+  0% {
+    width: 100%;
+    opacity: 0.5; }
+  99% {
+    width: 100%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
+@keyframes fadeOutOverlay {
+  0% {
+    width: 100%;
+    opacity: 0.5; }
+  99% {
+    width: 100%;
     opacity: 0; }
   100% {
     width: 0%;

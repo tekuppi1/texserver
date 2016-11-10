@@ -18,7 +18,7 @@
 <a id="close-button" class="hide_exhibit_dialog btn-floating waves-effect waves-light red"><i class="material-icons">clear</i></a>
 
 <!--↑　自由に変えてちょ！ ↑-->
-
 <!-- ============================================ -->
 </div>
+<div id="exhibit_dialog_overlay"></div>
 <?php } ?>

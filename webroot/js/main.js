@@ -98,12 +98,14 @@ window.onload = function () {
   $('.show_exhibit_dialog').click(function () {
     console.log("show exhibit dialog");
     (0, _animation.addFadein)('#exhibit_dialog');
+    (0, _animation.addFadein)('#exhibit_dialog_overlay');
   });
 
   // 出品確認ダイアログの非表示
   $('.hide_exhibit_dialog').click(function () {
     console.log("hide exhibit dialog");
     (0, _animation.addFadeout)('#exhibit_dialog');
+    (0, _animation.addFadeout)('#exhibit_dialog_overlay');
   });
 };
 

@@ -20,11 +20,13 @@ window.onload = function(){
   $('.show_exhibit_dialog').click(() => {
     console.log("show exhibit dialog");
     addFadein('#exhibit_dialog');
+    addFadein('#exhibit_dialog_overlay');
   });
 
   // 出品確認ダイアログの非表示
   $('.hide_exhibit_dialog').click(() => {
     console.log("hide exhibit dialog");
     addFadeout('#exhibit_dialog');
+    addFadeout('#exhibit_dialog_overlay');
   });
 }
