@@ -4,7 +4,7 @@
 <!-- ============================================ -->
 <p>出品用ページ</p>
 
-  <div class="container ISBN">
+  <div class="container_exhibit">
     <form action="#">
       <p>
         <input name="group1" type="radio" id="test1" />
@@ -51,12 +51,6 @@
   </div>
 
 
-<script>
-/*↓ドロップダウン*/
-	  $(document).ready(function() {
-	    $('select').material_select();
-	  });
-</script>
 
 <!-- ============================================ -->
 </div></div>
