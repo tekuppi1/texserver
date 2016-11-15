@@ -1,41 +1,42 @@
 .container_exhibit {
 
-　witdh: 85%; 
-　margin-right: auto;
-　margin-left: auto;
+ witdh: 85%; 
+ margin-right: auto;
+ margin-left: auto;
+ }
 
-　// ISBN テキストボックス
-　input#ISBN { //これであってた。
+ // ISBN テキストボックス
+ input#ISBN { //これであってた。
  　　border-bottom: 1px solid #ff6f00;
  　　box-shadow: 0 1px 0 0 #ff6f00;
-　}
+ }
 
-　　// プルダウン ラベル
-　　label.label-color {
-　　　color: #ff6f00 !important;    
-　　}
+ // プルダウン ラベル
+ label.label-color {
+   color: #ff6f00 !important;    
+ }
 
-　　// ドロップダウン項目
-　　.dropdown-content li>span {
-　　　color: #ff6f00;
-　　}
+ // ドロップダウン項目
+ .dropdown-content li>span {
+   color: #ff6f00;
+ }
 
-　　// materializeとboostrapのバグ対応
-　　.caret {
-    　　border: none;
-　　}
+ // materializeとboostrapのバグ対応
+ .caret {
+  border: none;
+ }
 
-　　// ラジオボタン
-　　[type="radio"]:checked + label::after,
- 　　.with-gap[type="radio"]:checked + label::after{
-    　　background-color: #ff6f00;
-    　　border: 2px solid #ff8f00;
- 　　}
+ // ラジオボタン
+ [type="radio"]:checked + label::after,
+ 　.with-gap[type="radio"]:checked + label::after{
+    background-color: #ff6f00;
+    border: 2px solid #ff8f00;
+ 　}
 
-　　 [type="radio"]:checked + label::after,
-　　 .with-gap[type="radio"]:checked + label::before,
- 　　.with-gap[type="radio"]:checked + label::after {
-    　　border: 2px solid #ff8f00;
-　　}
+ [type="radio"]:checked + label::after,
+  .with-gap[type="radio"]:checked + label::before,
+ 　.with-gap[type="radio"]:checked + label::after {
+    border: 2px solid #ff8f00;
+ }
 
 }

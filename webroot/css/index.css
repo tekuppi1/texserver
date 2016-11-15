@@ -96,6 +96,68 @@ nav {
 .users.form .role {
   padding: 0 0.75rem; }
 
+/**
+ * 出品確認ダイアログ
+ */
+#exhibit_dialog {
+  width: 0%;
+  display: block; }
+
+#exhibit_dialog.fadein {
+  -webkit-animation: fadeIn 0.5s ease 0s 1 forwards;
+          animation: fadeIn 0.5s ease 0s 1 forwards; }
+
+#exhibit_dialog.fadeout {
+  -webkit-animation: fadeOut 1s ease 0s 1 forwards;
+          animation: fadeOut 1s ease 0s 1 forwards; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 80%;
+    opacity: 1.0; } }
+
+@keyframes fadeIn {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 80%;
+    opacity: 1.0; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    width: 80%;
+    opacity: 1.0; }
+  99% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    width: 80%;
+    opacity: 1.0; }
+  99% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
+/**
+ * 出品画面
+ */
 /* Techange team 2016 */
 body {
   margin: 0;
