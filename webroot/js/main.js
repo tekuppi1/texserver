@@ -94,6 +94,9 @@ window.onload = function () {
   // viweMain1.ctpで取得
   (0, _texchart.texchart)(chartLabel, chartValue);
 
+  /*↓出品画面のドロップダウン*/
+  $('select').material_select();
+
   // 出品確認ダイアログの表示
   $('.show_exhibit_dialog').click(function () {
     console.log("show exhibit dialog");

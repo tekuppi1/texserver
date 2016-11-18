@@ -1,13 +1,29 @@
-<?php 
-require "components/dialog.php";
-?>
-<div class="col-sm-12 admin"><div class="card-panel">
-<!-- ============================================ -->
-<!-- 出品画面 -->
-<!-- ============================================ -->
-<p>出品用ページ</p>
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>TexChangeダッシュボード</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+    [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #ffab00;
+    }
+    [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #ffab00;
+    z-index: 0;
+    }
+    [type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid #ffab00;
+    }
 
-  <div class="container_exhibit">
+  </style>
+</head>
+<body>
+
+  <div class="container ISBN">
     <form action="#">
       <p>
         <input name="group1" type="radio" id="test1" />
@@ -44,7 +60,7 @@ require "components/dialog.php";
 
       <div class="input-field col s12">
         <input placeholder="ISBNを入力してください" id="ISBN" type="text" class="validate">
-        <label for="ISBN" class="label-color">ISBN</label>
+        <label for="ISBN">ISBN</label>
       </div>
 
       <div class="center margin-bottom">
@@ -53,10 +69,8 @@ require "components/dialog.php";
     </form>
   </div>
 
-
-
-
-<a class="show_exhibit_dialog waves-effect waves-light btn">ダイアログ表示</a>
-<!-- ============================================ -->
-<?php dialog(); ?>
-</div></div>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
