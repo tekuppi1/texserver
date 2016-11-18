@@ -90,34 +90,6 @@ nav {
   bottom: 20px;
   right: 20px; }
 
-.container_exhibit {
-  witdh: 85%;
-  margin-right: auto;
-  margin-left: auto; }
-
-input#ISBN {
-  box-shadow: 0 1px 0 0 #BDBDBD;
-  border-bottom: 1px solid #BDBDBD; }
-
-label.label-color {
-  color: #ff6f00 !important; }
-
-.dropdown-content li > span {
-  color: #ff6f00; }
-
-.caret {
-  border: none; }
-
-[type="radio"]:checked + label::after,
-.with-gap[type="radio"]:checked + label::after {
-  background-color: #ff6f00;
-  border: 2px solid #ff8f00; }
-
-[type="radio"]:checked + label::after,
-.with-gap[type="radio"]:checked + label::before,
-.with-gap[type="radio"]:checked + label::after {
-  border: 2px solid #ff8f00; }
-
 /**
  * users テンプレート用
  */
@@ -186,6 +158,28 @@ label.label-color {
 /**
  * 出品画面
  */
+.container_exhibit {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto; }
+  .container_exhibit input#ISBN {
+    box-shadow: 0 1px 0 0 #BDBDBD;
+    border-bottom: 1px solid #BDBDBD; }
+  .container_exhibit label.label-color {
+    color: #ff6f00 !important; }
+  .container_exhibit .dropdown-content li > span {
+    color: #ff6f00; }
+  .container_exhibit .caret {
+    border: none; }
+  .container_exhibit [type="radio"]:checked + label::after,
+  .container_exhibit .with-gap[type="radio"]:checked + label::after {
+    background-color: #ff6f00;
+    border: 2px solid #ff8f00; }
+  .container_exhibit [type="radio"]:checked + label::after,
+  .container_exhibit .with-gap[type="radio"]:checked + label::before,
+  .container_exhibit .with-gap[type="radio"]:checked + label::after {
+    border: 2px solid #ff8f00; }
+
 /* Techange team 2016 */
 body {
   margin: 0;
