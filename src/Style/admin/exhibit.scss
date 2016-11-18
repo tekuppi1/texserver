@@ -7,10 +7,10 @@
 
  // ISBN テキストボックス
  input#ISBN { //これであってた。
- 　　border-bottom: 1px solid #ff6f00;
- 　　box-shadow: 0 1px 0 0 #ff6f00;
- }
-
+  box-shadow: 0 1px 0 0 #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;
+  }
+  
  // プルダウン ラベル
  label.label-color {
    color: #ff6f00 !important;    
@@ -26,17 +26,15 @@
   border: none;
  }
 
- // ラジオボタン
+ //　ラジオボタン
  [type="radio"]:checked + label::after,
- 　.with-gap[type="radio"]:checked + label::after{
-    background-color: #ff6f00;
-    border: 2px solid #ff8f00;
- 　}
-
- [type="radio"]:checked + label::after,
-  .with-gap[type="radio"]:checked + label::before,
- 　.with-gap[type="radio"]:checked + label::after {
-    border: 2px solid #ff8f00;
+ .with-gap[type="radio"]:checked + label::after{
+ 	background-color: #ff6f00;
+ 	border: 2px solid #ff8f00;
  }
 
-}
+ [type="radio"]:checked + label::after,
+ .with-gap[type="radio"]:checked + label::before,
+ .with-gap[type="radio"]:checked + label::after{
+ 	border: 2px solid #ff8f00;
+ 	}

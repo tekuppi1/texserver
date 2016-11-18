@@ -44,7 +44,7 @@ require "components/dialog.php";
 
       <div class="input-field col s12">
         <input placeholder="ISBNを入力してください" id="ISBN" type="text" class="validate">
-        <label for="ISBN">ISBN</label>
+        <label for="ISBN" class="label-color">ISBN</label>
       </div>
 
       <div class="center margin-bottom">

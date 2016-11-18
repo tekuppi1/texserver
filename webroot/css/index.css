@@ -90,6 +90,34 @@ nav {
   bottom: 20px;
   right: 20px; }
 
+.container_exhibit {
+  witdh: 85%;
+  margin-right: auto;
+  margin-left: auto; }
+
+input#ISBN {
+  box-shadow: 0 1px 0 0 #BDBDBD;
+  border-bottom: 1px solid #BDBDBD; }
+
+label.label-color {
+  color: #ff6f00 !important; }
+
+.dropdown-content li > span {
+  color: #ff6f00; }
+
+.caret {
+  border: none; }
+
+[type="radio"]:checked + label::after,
+.with-gap[type="radio"]:checked + label::after {
+  background-color: #ff6f00;
+  border: 2px solid #ff8f00; }
+
+[type="radio"]:checked + label::after,
+.with-gap[type="radio"]:checked + label::before,
+.with-gap[type="radio"]:checked + label::after {
+  border: 2px solid #ff8f00; }
+
 /**
  * users テンプレート用
  */
