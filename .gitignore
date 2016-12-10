@@ -5,3 +5,5 @@ logs/
 
 webroot/css/index.css
 webroot/js/main.js
+
+config/texserver.php
