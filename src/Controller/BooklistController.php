@@ -17,11 +17,11 @@ class BooklistController extends AppController {
         $Books = TableRegistry::get('books')->find('all');
 
         // クエリパラメータ取得
-        $this->request->query;
+        $requestQuery = $this->request->query;
         $query_keyword = @$requestQuery['keyword'] ? $requestQuery['keyword'] : null; // @←これ重要
 
         // AmazonAPI呼び出し
-        $url = $this->AmazonApi->generateUrl("東野圭吾");
+        $url = $this->AmazonApi->generateUrl($query_keyword);
         $result = $this->AmazonApi->callApi($url);
 
         // setter
