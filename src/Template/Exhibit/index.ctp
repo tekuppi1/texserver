@@ -8,7 +8,7 @@ require "components/dialog.php";
 <p>出品用ページ</p>
 
   <div class="container_exhibit">
-    <form action="#">
+    <form method="get">
       <p>
         <input name="group1" type="radio" id="test1" />
         <label for="test1">南山大学</label>
@@ -35,15 +35,14 @@ require "components/dialog.php";
       <div class="input-field col s12">
         <select>
           <option value="" disabled selected>カテゴリを選んでください</option>
-          <option value="1">実用書</option>
-          <option value="2">語学</option>
-          <option value="3">共通科目</option>
+          <option value="1">小説</option>
+          <option value="2">漫画</option>
         </select>
         <label class="label-color">カテゴリ</label>
       </div>
 
       <div class="input-field col s12">
-        <input placeholder="ISBNを入力してください" id="ISBN" type="text" class="validate">
+        <input placeholder="ISBNを入力してください" id="ISBN" type="text" class="validate" name="isbn">
         <label for="ISBN" class="label-color">ISBN</label>
       </div>
 
@@ -52,6 +51,24 @@ require "components/dialog.php";
       </div>
     </form>
   </div>
+
+<a href=<?= h($AmazonApiUrl) ?> >URL</a>
+
+<p> 出品した本 : <?php echo $AmazonApiResult['TotalResults'] ?> </p>
+
+<table>
+
+<?php foreach((array)$AmazonApiResult['dataList'] as $item) { ?>
+
+  <tr>
+    <td><?php echo $item["Title"] ?></td>
+    <td><?php echo $item["Author"] ?></td>
+    <td><?php echo $item["Publisher"] ?></td>
+  </tr>
+
+<?php } ?>
+
+</table>
 
 
 
