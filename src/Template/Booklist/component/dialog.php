@@ -24,7 +24,7 @@
                 小説
             </p>
         </div>
-        <div class="question">本当に取り引き完了完了しますか？</div>
+        <div class="question">本当に取り引きを完了しますか？</div>
         <div class="center margin-bottom">
             <button class="btn waves-effect waves-light amber darken-4" type="submit">Yes</button>
             <button class="btn waves-effect waves-light blue hide_booklist_dialog modal-action modal-close waves-effect">No</button>
