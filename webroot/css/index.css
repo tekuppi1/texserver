@@ -180,6 +180,19 @@ nav {
   .container_exhibit .with-gap[type="radio"]:checked + label::after {
     border: 2px solid #ff8f00; }
 
+.searchfont {
+  font-size: 25px;
+  font-weight: bold; }
+
+.searchcolor {
+  background-color: #81c784; }
+
+.box {
+  display: inline-block; }
+
+.boxContainer {
+  overflow: hidden; }
+
 /* Techange team 2016 */
 body {
   margin: 0;
