@@ -1,9 +1,14 @@
+<?php 
+require "component/dialog.php";
+?>
+
 <div class="col-sm-12 admin"><div class="card-panel">
 <!-- ============================================ -->
 <!-- 本一覧画面 -->
 <!-- ============================================ -->
 <p>本一覧ページ</p>
 
+<!-- 検索-->
 <h1 class="searchfont">キーワード検索</h1>
  <nav class="searchcolor">
     <div class="nav-wrapper">
@@ -17,6 +22,7 @@
     </div>
   </nav>
 
+<!-- ラジオボタン-->
 <h1 class="searchfont">カテゴリ検索</h1>
 <form action="#">
   <p>
@@ -34,6 +40,7 @@
 </form>
 </br>
 
+<!-- ドロップダウン-->
 <div class="input-field col s12">
   <select>
     <option value="" disabled selected>大学を選んでください</option>
@@ -46,27 +53,66 @@
 </br>
 </br>
 <a class="waves-effect waves-light btn"><i class="material-icons left">repeat</i>検索</a>
-  <div class="boxContainer">
-    <div class="row">
-      <div class="col s12 m7 l3">
-        <div class="card box">
-          <div class="card-image">
-            <img src="/texserver/img/sample.jpg">
-          </div>
-          <div class="card-content">
-          <span class="card-title">『迷宮の十字路』</span>
-            <p>
-            名探偵コナン　</br>
-            原作者：青山剛昌</br>
+</br>
+</br>
+
+<!-- booklist-->
+<div class="boxContainer" >
+  <div class="row">
+    <div class="col s4 m6 l3">
+      <div class="card box">
+        <div class="card-image">
+          <img src="http://images-jp.amazon.com/images/P/4864100829.09.LZZZZZZZ" >
+        </div>
+        <div class="card-contents">
+        <span class="booklist-card-title">『夢をかなえるゾウ』</span>
+          <p>
+          著者：水野敬也</br>
+          残り冊数：１冊</br>
+          </p>
+        </div>
+        <div class="show_booklist_dialog">
+          <a>取り引き完了</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s4 m6 l3">
+      <div class="card box">
+        <div class="card-image">
+          <img src="http://images-jp.amazon.com/images/P/4864100829.09.LZZZZZZZ" >
+        </div>
+        <div class="card-contents">
+          <span class="booklist-card-title">『夢をかなえるゾウ』</span>
+          <p>
+          著者：水野敬也</br>
+          残り冊数：１冊</br>
+          </p>
+        </div>
+        <div class="show_booklist_dialog">
+          <a>取り引き完了</a>
+        </div>
+      </div>
+    </div>
+    <div class="col s4 m6 l3">
+      <div class="card box">
+        <div class="card-image">
+          <img src="http://images-jp.amazon.com/images/P/4864100829.09.LZZZZZZZ" >
+        </div>
+        <div class="card-contents">
+          <span class="booklist-card-title">『夢をかなえるゾウ』</span>
+          <p>
+            著者：水野敬也</br>
             残り冊数：１冊</br>
-            </p>
-          </div>
-          <div class="card-action">
-            <a href="#">取り引き</a>
-          </div>
+          </p>
+        </div>
+        <div class="show_booklist_dialog">
+          <a>取り引き完了</a>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 <!-- ============================================ -->
+<?php dialog(); ?>
 </div></div>

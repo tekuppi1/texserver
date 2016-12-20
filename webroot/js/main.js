@@ -108,6 +108,18 @@ window.onload = function () {
     console.log("hide exhibit dialog");
     (0, _animation.addFadeout)('#exhibit_dialog');
   });
+
+  // 取り引き確認ダイアログの表示
+  $('.show_booklist_dialog').click(function () {
+    console.log("show booklist dialog");
+    (0, _animation.addFadein)('#booklist_dialog');
+  });
+
+  // 取り引き確認ダイアログの非表示
+  $('.hide_booklist_dialog').click(function () {
+    console.log("hide booklist dialog");
+    (0, _animation.addFadeout)('#booklist_dialog');
+  });
 };
 
 },{"./components/animation":1,"./components/texchart":2}]},{},[3]);

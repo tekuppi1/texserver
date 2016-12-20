@@ -222,6 +222,85 @@ img.book-picture {
   .container_exhibit .with-gap[type="radio"]:checked + label::after {
     border: 2px solid #ff8f00; }
 
+/**
+ * 取り引き完了ダイアログ
+ */
+#booklist_dialog {
+  width: 0%;
+  display: block;
+  background-color: white;
+  vertical-align: middle;
+  border-radius: 4px; }
+
+#booklist_dialog_content {
+  position: center; }
+
+b {
+  font-weight: 1000 !important; }
+
+.book {
+  text-align: center; }
+
+.book-picture {
+  height: 120px;
+  width: 100px; }
+
+.Yes_button {
+  width: 70px;
+  box-shadow: 0 1px 0 0 #000000;
+  margin-bottom: 5px;
+  margin-right: 15px; }
+
+.No_button {
+  width: 70px;
+  box-shadow: 0 1px 0 0 #000000;
+  margin-bottom: 5px;
+  margin-left: 15px; }
+
+.question {
+  text-align: center;
+  color: orangered;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: 1000px !important; }
+
+.title-content {
+  float: left; }
+
+img.book-picture {
+  width: 100px !important;
+  margin: 10px auto; }
+
+#booklist_dialog.fadein {
+  -webkit-animation: fadeIn 0.5s ease 0s 1 forwards;
+          animation: fadeIn 0.5s ease 0s 1 forwards; }
+
+#booklist_dialog.fadeout {
+  -webkit-animation: fadeOut 1s ease 0s 1 forwards;
+          animation: fadeOut 1s ease 0s 1 forwards; }
+
+@keyframes fadeIn {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 80%;
+    opacity: 1.0; } }
+
+@keyframes fadeOut {
+  0% {
+    width: 80%;
+    opacity: 1.0; }
+  99% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
 .searchfont {
   font-size: 25px;
   font-weight: bold; }
@@ -230,10 +309,17 @@ img.book-picture {
   background-color: #81c784; }
 
 .box {
-  display: inline-block; }
+  display: inline; }
 
-.boxContainer {
-  overflow: hidden; }
+.booklist-card-title {
+  font-size: 15px;
+  font-weight: bold; }
+
+.card-contents {
+  padding: 2px; }
+
+.show_booklist_dialog {
+  padding: 2px; }
 
 /* Techange team 2016 */
 body {

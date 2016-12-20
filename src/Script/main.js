@@ -29,4 +29,16 @@ window.onload = function(){
     console.log("hide exhibit dialog");
     addFadeout('#exhibit_dialog');
   });
+
+  // 取り引き確認ダイアログの表示
+  $('.show_booklist_dialog').click(() => {
+    console.log("show booklist dialog");
+    addFadein('#booklist_dialog');
+  });
+
+  // 取り引き確認ダイアログの非表示
+  $('.hide_booklist_dialog').click(() => {
+    console.log("hide booklist dialog");
+    addFadeout('#booklist_dialog');
+  });
 }
