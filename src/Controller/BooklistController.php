@@ -11,22 +11,11 @@ use Cake\I18n\Time;
 
 class BooklistController extends AppController {
 
-    var $components = array('AmazonApi');
+    var $components = array('LoadBook');
 
     public function index() {
-        $Books = TableRegistry::get('books')->find('all');
-
-        // クエリパラメータ取得
-        $requestQuery = $this->request->query;
-        $query_keyword = @$requestQuery['keyword'] ? $requestQuery['keyword'] : null; // @←これ重要
-
-        // AmazonAPI呼び出し
-        $url = $this->AmazonApi->generateUrl($query_keyword);
-        $result = $this->AmazonApi->callApi($url);
-
-        // setter
-        $this->set("AmazonApiUrl", $url);
-        $this->set("AmazonApiResult", $result);
-        $this->Flash->success(__("API GET"));
+        // 本一欄を取得 
+        $books = $this->LoadBook->load();
+        $this->set('books', $books);
     }
 }

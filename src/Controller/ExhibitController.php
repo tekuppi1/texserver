@@ -29,6 +29,7 @@ class ExhibitController extends AppController {
         $this->Flash->success(__("API GET"));
 
 
+		/*
         if ($this->request->is('get')) {
         	$book = $booksTable->newEntity();
 
@@ -47,5 +48,6 @@ class ExhibitController extends AppController {
 	            $this->Flash->success('出品に失敗しました');
 	        }
 	    }
+		*/
     }
 }
