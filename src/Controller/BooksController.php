@@ -17,13 +17,29 @@ class BooksController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Cats']
-        ];
-        $books = $this->paginate($this->Books);
+        // $this->paginate = [
+        //     'contain' => ['Cats']
+        // ];
+        // $books = $this->paginate($this->Books);
 
+        $books = $this->Books->find('all');
         $this->set(compact('books'));
-        $this->set('_serialize', ['books']);
+        // $this->set('_serialize', ['books']);
+        // $json_books = json_encode($this->Books->find('all'));
+        // $books = json_decode($json_books);
+        // $this->set('books', $books);
+        // if(!$this->request->is('ajax')){
+        //     throw new BadRequestException();
+        // }
+        // $status = !empty($books);
+        // if(!$status){
+        //     $error = array(
+        //         'message' => 'データがありません',
+        //         'code' => 404
+
+        //     );
+        // }
+        // return json_encode(compact('status','books','error'));
     }
 
     /**

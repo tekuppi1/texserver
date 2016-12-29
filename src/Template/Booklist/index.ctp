@@ -113,6 +113,15 @@ require "component/dialog.php";
   </div>
 </div>
 
+<table>
+<?php
+foreach($books as $book) {
+    echo "<tr><th>タイトル</th><th>著者</th><tr>";
+    echo "<tr><td>".$book["title"]."</td><td>".$book["author"]."</td></tr>";
+    // debug($book);
+}
+?>
+</table>
 <!-- ============================================ -->
 
 <?php echo $this->element('baseDialog'); ?>

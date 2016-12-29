@@ -22,6 +22,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->script('../libs/js/bootstrap.min.js') ?>
     <?= $this->Html->script('../libs/js/materialize.min.js') ?>
     <?= $this->Html->script('../libs/js/Chart.min.js') ?>
+    <?= $this->Html->script('../libs/js/underscore-min.js') ?>
+    <?= $this->Html->script('../libs/js/underscore.js') ?>
+    <?= $this->Html->script('../libs/js/suggest.js') ?>
     <?= $this->Html->script('main.js') ?>
 
     <?= $this->fetch('meta') ?>

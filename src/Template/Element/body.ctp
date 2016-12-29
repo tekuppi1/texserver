@@ -26,6 +26,7 @@
         echo $this->element('main/viewMain1');
         echo $this->element('main/viewMain2');
         echo $this->element('main/viewMain3');
+        echo $this->element('main/viewMain4');
       }
     ?>
 
