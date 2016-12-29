@@ -131,9 +131,15 @@ foreach($books as $book) {
 <!-- SCRIPT -->
 <!-- ============================================ -->
 <script language="javascript">
-jQuery(function () {
-  jQuery("#dialog_header").text("タイトル");
-  jQuery("#dialog_body").text("ボディ");
-  console.log("aaa");
-});
+function showSubmitDialog() {
+  jQuery("#dialog_header_text").text("タイトル");
+  //jQuery("#dialog_body").text("ボディ");
+  jQuery("#dialog_body").append('<li>追加されました</li>');
+  jQuery("#dialog_dismissive_text").text("CANCEL");
+  jQuery("#dialog_affirmative_text").text("CONFIRMED");
+  // 保留
+  $('#dialog_affirmative').click(function() {
+    //$('#form1').submit();
+  });
+};
 </script>
