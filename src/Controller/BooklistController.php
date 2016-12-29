@@ -11,11 +11,11 @@ use Cake\I18n\Time;
 
 class BooklistController extends AppController {
 
-    var $components = array('LoadBook');
+    var $components = array('BookFunc');
 
     public function index() {
         // 本一欄を取得 
-        $books = $this->LoadBook->load();
+        $books = $this->BookFunc->load();
         $this->set('books', $books);
     }
 }

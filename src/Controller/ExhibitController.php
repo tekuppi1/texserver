@@ -11,7 +11,7 @@ use Cake\I18n\Time;
 
 class ExhibitController extends AppController {
 
-	var $components = array('AmazonApi');
+	var $components = array('AmazonApi', 'BookFunc');
     
     public function index() {
         $booksTable = TableRegistry::get('books');
@@ -28,26 +28,15 @@ class ExhibitController extends AppController {
         $this->set("AmazonApiResult", $result);
         $this->Flash->success(__("API GET"));
 
-
-		/*
-        if ($this->request->is('get')) {
-        	$book = $booksTable->newEntity();
-
-	        $book->title = $result['dataList'][0]["Title"];
-	        $book->isbn = $result['dataList'][0]["ISBN"];
-	        $book->author = $result['dataList'][0]["Author"];
-	        //保存する
-	        if ($booksTable->save($book)) {
-	        	$id = $book->id;
-	            // メッセージをセットしてリダイレクトする
-		        $this->Flash->success(__("出品完了！"));
-	        }
-	        else
-	        {
-	            //保存が失敗した場合のメッセージ
-	            $this->Flash->success('出品に失敗しました');
-	        }
-	    }
-		*/
+        // 本を登録
+        $books = $this->BookFunc->save(array(
+          'title' => 'title',
+          'author' => null,
+          'price' => 1,
+          'cat_id' => 1,
+          'img' => 'img',
+          'isbn' => 3,
+        ));
+        $books ? $this->Flash->success(__("出品完了！")) : $this->Flash->success('出品に失敗しました');
     }
 }

@@ -28,11 +28,11 @@ class BooksTable extends Table {
 
     public function validationDefault(Validator $validator) {
         $validator->integer('id')->allowEmpty('id', 'create');
-        $validator->requirePresence('title', 'create')->notEmpty('title');
-        $validator->requirePresence('author', 'create')->notEmpty('author');
-        $validator->integer('price')->requirePresence('price', 'create')->notEmpty('price');
-        $validator->requirePresence('img', 'create')->notEmpty('img');
-        $validator->requirePresence('isbn', 'create')->notEmpty('isbn');
+        $validator->requirePresence('title', 'create')->notEmpty('title', "タイトルが不明です。");
+        $validator->requirePresence('author', 'create')->notEmpty('author', "著者名が不明です。");
+        $validator->integer('price')->requirePresence('price', 'create')->notEmpty('price', "価格が不明です。");
+        $validator->requirePresence('img', 'create')->notEmpty('img', "画像URLが不明です。");
+        $validator->requirePresence('isbn', 'create')->notEmpty('isbn', "ISBNが不明です。");
         return $validator;
     }
 

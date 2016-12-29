@@ -5,7 +5,32 @@ use Cake\Controller\Component;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 
-class LoadBookComponent extends Component {
+class BookFuncComponent extends Component {
+
+  public $components = array('Flash', 'CategoryFunc');
+
+  /**
+   * 本データの保存
+   */
+  public function save($params = array()){
+
+    //Get to Model
+    $Books = TableRegistry::get('books');
+
+    //Create Entry
+    $BookEntry = array();
+    $BookEntry["title"]  = @$params['title']   ? $params['title']    : null; // @←これ重要
+    $BookEntry["author"] = @$params['author']  ? $params['author']   : null; // @←これ重要
+    $BookEntry["price"]  = @$params['price']   ? $params['price']    : null; // @←これ重要
+    $BookEntry["cat_id"] = @$params['cat_id']  ? $params['cat_id']   : null; // @←これ重要
+    $BookEntry["img"]    = @$params['img']     ? $params['img']      : null; // @←これ重要
+    $BookEntry["isbn"]   = @$params['isbn']    ? $params['isbn']     : null; // @←これ重要
+    $BookEntry = $Books->newEntity($BookEntry);
+
+    // バリデーションチェック
+    if($BookEntry->errors()) return false;
+    return $Books->save($BookEntry);;
+  }
 
   /**
    * 本データの読み出し
@@ -14,7 +39,6 @@ class LoadBookComponent extends Component {
 
     //Get to Model
     $Books = TableRegistry::get('books')->find('all');
-    $Category = TableRegistry::get('category')->find('all');
 
     //Filter
     $filterBooks = $this->filtering($Books, $params);
