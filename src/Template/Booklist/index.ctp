@@ -114,5 +114,17 @@ require "component/dialog.php";
 </div>
 
 <!-- ============================================ -->
-<?php dialog(); ?>
+
+<?php echo $this->element('baseDialog'); ?>
 </div></div>
+
+<!-- ============================================ -->
+<!-- SCRIPT -->
+<!-- ============================================ -->
+<script language="javascript">
+jQuery(function () {
+  jQuery("#dialog_header").text("タイトル");
+  jQuery("#dialog_body").text("ボディ");
+  console.log("aaa");
+});
+</script>

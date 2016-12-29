@@ -5,32 +5,21 @@
 <!-- ============================================ -->
 
 <!--↓　自由に変えてちょ！ ↓-->
-<form action="#">
-    <font face="游明朝">            
-        <div class="book">
-            <img src="/texserver/img/4864100829.jpg" class="book-picture">
-        </div>
-        <div id="booklist_dialog_content" >
-            <p class="title">
-                <B>タイトル：</B>
-                    「夢をかなえるゾウ」
-            </p>
-            <p class="title">
-                <B>大学：</B>
-                その他
-            </p>
-            <p class="title">
-                <B>学部：</B>
-                小説
-            </p>
-        </div>
-        <div class="question">本当に取り引きを完了しますか？</div>
-        <div class="center margin-bottom">
-            <button class="btn waves-effect waves-light amber darken-4" type="submit">Yes</button>
-            <button class="btn waves-effect waves-light blue hide_booklist_dialog modal-action modal-close waves-effect">No</button>
-        </div>
-    </font>
-</form>
+<div class="book">
+    <img src="/texserver/img/4864100829.jpg" class="book-picture">
+</div>
+
+<table>
+    <tr><td>タイトル：</td><td>「夢をかなえるゾウ」</td></tr>
+    <tr><td>大学：</td><td>その他</td></tr>
+    <tr><td>学部：</td><td>小説</td></tr>
+</table>
+
+<div class="question">本当に取り引きを完了しますか？</div>
+<div class="center margin-bottom">
+    <button class="btn waves-effect waves-light amber darken-4" type="submit">Yes</button>
+    <button class="btn waves-effect waves-light blue hide_booklist_dialog modal-action modal-close waves-effect">No</button>
+</div>
 <!--↑　自由に変えてちょ！ ↑-->
 
 <!-- ============================================ -->
