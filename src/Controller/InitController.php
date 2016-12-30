@@ -25,24 +25,34 @@ class InitController extends AppController {
     // http://book.cakephp.org/3.0/ja/orm/retrieving-data-and-resultsets.html
     $Books = TableRegistry::get('books')->find('all');
     $Category = TableRegistry::get('category')->find('all');
-    //$user = TableRegistry::get('user')->find('all');
-    //$log = TableRegistry::get('log')->find('all');
 
     //Get to query
     $requestQuery  = $this->request->query;
     $query_cat_id = @$requestQuery['cat_id'] ? $requestQuery['cat_id'] : null; // @←これ重要
 
     //Filter
-    $filterBooks = array();
+    $parents = array();
+    $categories = array();
+    $books = array();
+
+    //-------------------------------------------------------------------------------
+    //Category
+    foreach($Category as $cat) {
+      if($cat['parent_id'] == null) {
+        array_push($parents, $cat);
+      } else {
+        array_push($categories, $cat);
+      }
+    }
 
     //-------------------------------------------------------------------------------
     //Category Filter
     if($query_cat_id!=null)
       foreach ($Books as $row) {
-        if($row['cat_id'] == $query_cat_id) array_push($filterBooks,$row);
+        if($row['cat_id'] == $query_cat_id) array_push($books,$row);
       }
     else
-      $filterBooks = $Books;
+      $books = $Books;
 
     //-------------------------------------------------------------------------------
     //Error Handring
@@ -50,7 +60,7 @@ class InitController extends AppController {
     $error = !$status ? array('message' => 'Bookがありません', 'code' => 404) : null;
 
     //output
-    $this->set(compact('status', 'Category', 'filterBooks', 'error'));
-    $this->set('_serialize', array('status', 'Category', 'filterBooks', 'error'));
+    $this->set(compact('status', 'parents', 'categories', 'books', 'error'));
+    $this->set('_serialize', array('status', 'parents', 'categories', 'books', 'error'));
   }
 }

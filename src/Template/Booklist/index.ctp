@@ -1,7 +1,3 @@
-<?php 
-require "component/dialog.php";
-?>
-
 <div class="col-sm-12 booklist"><div class="card-panel">
 <!-- ============================================ -->
 <!-- 本一覧画面 -->
@@ -33,7 +29,7 @@ require "component/dialog.php";
 <?php
   $subGenre = array("理工学部","経済学部","経営学部");
   echo "<select>";
-    echo "<option value='' disabled selected>大学を選んでください</option>";
+    echo "<option value='' disabled selected>学部を選んでください</option>";
     foreach($subGenre as $k=>$v) echo "<option value='$k'>$v</option>";
   echo "</select>";
   echo "<label>サブカテゴリを選んでください</label>";
@@ -47,13 +43,6 @@ require "component/dialog.php";
 <!-- booklist-->
 <div class="boxContainer" ><div class="row">
 <?php
-// $_book = array();
-// $_book["img"] = "http://images-jp.amazon.com/images/P/4864100829.09.LZZZZZZZ";
-// $_book["title"] = "『夢をかなえるゾウ』";
-// $_book["count"] = 1;
-// $_book["author"] = "水野敬也";
-// $_book["genre"] = "南山大学";
-// $_books = array($_book, $_book, $_book);
 foreach($books as $key => $book) {
   $jsonBook = json_encode($book);
   echo "<div class='col s4 m6 l3'><div class='card box'>";
