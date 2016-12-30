@@ -12,10 +12,16 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
+use Cake\Event\Event;
 
 class InitController extends AppController {
 
   public $components = array('RequestHandler');
+
+  public function beforeFilter(Event $event) {
+    parent::beforeFilter($event);
+    $this->Auth->allow(['index']);
+  }
 
   public function index() {
     $this->viewClass = 'Json';
