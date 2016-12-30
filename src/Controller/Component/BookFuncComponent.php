@@ -61,7 +61,7 @@ class BookFuncComponent extends Component {
     }
     // フィルタリング有り
     if($filter.cat_id) {
-      if($row['cat_id'] == $filter.cat_if)
+      if($row['cat_id'] == $filter.cat_id)
         foreach($books as $row) array_push($res, $row);
     }
     return $res;

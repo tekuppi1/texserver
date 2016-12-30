@@ -20,12 +20,11 @@ class CategoryFuncComponent extends Component {
 
     $res = array();
     foreach($Category as $row) array_push($res, $row);
-
     return $res;
   }
 
   /**
-   * カテゴリの取得
+   * カテゴリの追加
    * @param {String} カテゴリ名
    * @param {Integer} 親カテゴリ
    */
@@ -54,6 +53,19 @@ class CategoryFuncComponent extends Component {
     $Category = TableRegistry::get('category')->find('all');
     foreach($this->get() as $row) if($row["id"] == $id) return true;
     return false;
+  }
+
+  /**
+   * カテゴリ名を取得
+   * @param {Integer} $id - ID
+   */
+  public function getName($id){
+    $Category = TableRegistry::get('category')->find('all');
+
+    if($id == null) return null;
+    foreach($Category as $row) if($row["id"] == $id) $key = $row;
+    foreach($Category as $row) if($row["id"] == $key['parent_id']) return $row["name"];
+    return null;
   }
 }
 ?>
