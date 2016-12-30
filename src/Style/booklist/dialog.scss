@@ -1,9 +1,9 @@
 /**
  * 取り引き完了ダイアログ
  */
-#booklist_dialog {
+#dialog {
     height: auto;
-    width: 400px;
+    width: 0%;
     display: block;
     background-color: white;
     border-radius: 4px;
@@ -13,6 +13,7 @@
     right: 0%;
     transform: translate(-50%, -50%);
     padding: 8px;
+    opacity: 0;
 
     header {
         height: 30px;
@@ -63,25 +64,4 @@
         font-weight: 1000px !important;
     }
 
-}
-
-//======================================================================
-// アニメーション
-//======================================================================
-#booklist_dialog.fadein {
-  animation: fadeIn 0.5s ease 0s 1 forwards;
-}
-#booklist_dialog.fadeout {
-  animation: fadeOut 1s ease 0s 1 forwards;
-}
-
-@keyframes fadeIn {
-    0%   {width: 0%;  opacity:   0;}
-    1%   {width: 80%; opacity:   0;}
-    100% {width: 80%; opacity: 1.0;}
-}
-@keyframes fadeOut {
-    0%   {width: 80%; opacity: 1.0;}
-    99%  {width: 80%; opacity:   0;}
-    100% {width: 0%;  opacity:   0;}
 }

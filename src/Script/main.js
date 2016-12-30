@@ -31,14 +31,14 @@ window.onload = function(){
   });
 
   // 取り引き確認ダイアログの表示
-  $('.show_booklist_dialog').click(() => {
+  $('.show_submit_dialog').click(() => {
     console.log("show booklist dialog");
-    addFadein('#booklist_dialog');
+    addFadein('#dialog');
   });
 
-  // 取り引き確認ダイアログの非表示
-  $('.hide_booklist_dialog').click(() => {
+  // 確認ダイアログの非表示
+  $('.hide_dialog').click(() => {
     console.log("hide booklist dialog");
-    addFadeout('#booklist_dialog');
+    addFadeout('#dialog');
   });
 }

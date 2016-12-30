@@ -1,25 +1,30 @@
-.searchfont {
-  font-size: 25px;
-  font-weight: bold;
-}
+.booklist {
+	.searchfont {
+		font-size: 25px;
+		font-weight: bold;
+	}
 
-.searchcolor {
-	background-color: #81c784;
-}
+	.searchcolor {
+		background-color: #81c784;
+		.nav-wrapper {
+			padding: 0;
+		}
+	}
 
-.box {
-	display: inline;
-}
+	.box {
+		display: inline;
+	}
 
-.booklist-card-title{
-	font-size:15px;
-	font-weight:bold;
-}
+	.booklist-card-title{
+		font-size:15px;
+		font-weight:bold;
+	}
 
-.card-contents{
-	padding:2px;
-}
+	.card-contents{
+		padding:2px;
+	}
 
-.show_booklist_dialog{
-	padding:2px;
+	.show_booklist_dialog{
+		padding:2px;
+	}
 }
