@@ -79,6 +79,58 @@ nav {
     color: rgba(255, 255, 255, 0.56);
     background-color: rgba(255, 255, 255, 0); }
 
+#dialog.fadein {
+  -webkit-animation: fadeIn 0.5s ease 0s 1 forwards;
+          animation: fadeIn 0.5s ease 0s 1 forwards; }
+
+#dialog.fadeout {
+  -webkit-animation: fadeOut 1s ease 0s 1 forwards;
+          animation: fadeOut 1s ease 0s 1 forwards; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 80%;
+    opacity: 1.0; } }
+
+@keyframes fadeIn {
+  0% {
+    width: 0%;
+    opacity: 0; }
+  1% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 80%;
+    opacity: 1.0; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    width: 80%;
+    opacity: 1.0; }
+  99% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    width: 80%;
+    opacity: 1.0; }
+  99% {
+    width: 80%;
+    opacity: 0; }
+  100% {
+    width: 0%;
+    opacity: 0; } }
+
 /**
  * 管理者用画面
  */
@@ -153,17 +205,6 @@ img.book-picture {
   -webkit-animation: fadeOut 1s ease 0s 1 forwards;
           animation: fadeOut 1s ease 0s 1 forwards; }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    width: 0%;
-    opacity: 0; }
-  1% {
-    width: 80%;
-    opacity: 0; }
-  100% {
-    width: 80%;
-    opacity: 1.0; } }
-
 @keyframes fadeIn {
   0% {
     width: 0%;
@@ -174,17 +215,6 @@ img.book-picture {
   100% {
     width: 80%;
     opacity: 1.0; } }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    width: 80%;
-    opacity: 1.0; }
-  99% {
-    width: 80%;
-    opacity: 0; }
-  100% {
-    width: 0%;
-    opacity: 0; } }
 
 @keyframes fadeOut {
   0% {
@@ -225,9 +255,9 @@ img.book-picture {
 /**
  * 取り引き完了ダイアログ
  */
-#booklist_dialog {
+#dialog {
   height: auto;
-  width: 400px;
+  width: 0%;
   display: block;
   background-color: white;
   border-radius: 4px;
@@ -237,121 +267,61 @@ img.book-picture {
   right: 0%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  padding: 8px; }
-  #booklist_dialog header {
+  padding: 8px;
+  opacity: 0; }
+  #dialog header {
     height: 30px;
     text-align: center; }
-  #booklist_dialog .dbody {
+  #dialog .dbody {
     padding: 16px; }
-  #booklist_dialog .book {
+  #dialog .book {
     text-align: center; }
-    #booklist_dialog .book img.book-picture {
+    #dialog .book img.book-picture {
       width: 100px !important;
       margin: 10px auto; }
-  #booklist_dialog img {
+  #dialog img {
     height: 120px;
     width: 100px; }
-  #booklist_dialog table {
+  #dialog table {
     width: 80%;
     margin-left: auto;
     margin-right: auto; }
-    #booklist_dialog table tr td:nth-of-type(1) {
+    #dialog table tr td:nth-of-type(1) {
       width: 40%;
       text-align: right; }
-  #booklist_dialog .No_button, #booklist_dialog .Yes_button {
+  #dialog .No_button, #dialog .Yes_button {
     width: 70px;
     box-shadow: 0 1px 0 0 #000000;
     margin-bottom: 5px;
     margin-left: 15px; }
-  #booklist_dialog .question {
+  #dialog .question {
     text-align: center;
     color: orangered;
     margin-bottom: 20px;
     margin-top: 20px;
     font-weight: 1000px !important; }
 
-#booklist_dialog.fadein {
-  -webkit-animation: fadeIn 0.5s ease 0s 1 forwards;
-          animation: fadeIn 0.5s ease 0s 1 forwards; }
-
-#booklist_dialog.fadeout {
-  -webkit-animation: fadeOut 1s ease 0s 1 forwards;
-          animation: fadeOut 1s ease 0s 1 forwards; }
-
-@keyframes fadeIn {
-  0% {
-    width: 0%;
-    opacity: 0; }
-  1% {
-    width: 80%;
-    opacity: 0; }
-  100% {
-    width: 80%;
-    opacity: 1.0; } }
-
-@keyframes fadeOut {
-  0% {
-    width: 80%;
-    opacity: 1.0; }
-  99% {
-    width: 80%;
-    opacity: 0; }
-  100% {
-    width: 0%;
-    opacity: 0; } }
-
-.searchfont {
+.booklist .searchfont {
   font-size: 25px;
   font-weight: bold; }
 
-.searchcolor {
+.booklist .searchcolor {
   background-color: #81c784; }
+  .booklist .searchcolor .nav-wrapper {
+    padding: 0; }
 
-.box {
+.booklist .box {
   display: inline; }
 
-.booklist-card-title {
+.booklist .booklist-card-title {
   font-size: 15px;
   font-weight: bold; }
 
-.card-contents {
+.booklist .card-contents {
   padding: 2px; }
 
-.show_booklist_dialog {
+.booklist .show_booklist_dialog {
   padding: 2px; }
-
-.book {
-  width: 25%;
-  height: 300px; }
-
-img {
-  width: 122px;
-  height: 180px; }
-
-.card-title {
-  font-size: 15px !important; }
-
-#suggest {
-  position: absolute;
-  background-color: #FFFFFF;
-  border: 1px solid #CCCCFF;
-  font-size: 90%;
-  width: 200px; }
-
-#suggest div {
-  display: block;
-  width: 200px;
-  overflow: hidden;
-  white-space: nowrap; }
-
-#suggest div.select {
-  /* キー上下で選択した場合のスタイル */
-  color: #FFFFFF;
-  background-color: #3366FF; }
-
-#suggest div.over {
-  /* マウスオーバ時のスタイル */
-  background-color: #99CCFF; }
 
 /* Techange team 2016 */
 body {

@@ -110,15 +110,15 @@ window.onload = function () {
   });
 
   // 取り引き確認ダイアログの表示
-  $('.show_booklist_dialog').click(function () {
+  $('.show_submit_dialog').click(function () {
     console.log("show booklist dialog");
-    (0, _animation.addFadein)('#booklist_dialog');
+    (0, _animation.addFadein)('#dialog');
   });
 
-  // 取り引き確認ダイアログの非表示
-  $('.hide_booklist_dialog').click(function () {
+  // 確認ダイアログの非表示
+  $('.hide_dialog').click(function () {
     console.log("hide booklist dialog");
-    (0, _animation.addFadeout)('#booklist_dialog');
+    (0, _animation.addFadeout)('#dialog');
   });
 };
 
