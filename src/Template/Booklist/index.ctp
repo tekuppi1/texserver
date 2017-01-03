@@ -38,23 +38,27 @@
 
 <!-- 確認ボタン -->
 <a class="waves-effect waves-light btn show_submit_dialog" onclick="showSubmitDialog();"><i class="material-icons left">repeat</i>検索</a>
-
-
+<hr />
+<h2>商品一覧</h2>
 <!-- booklist-->
 <div class="boxContainer" ><div class="row">
 <?php
 foreach($books as $key => $book) {
   $jsonBook = json_encode($book);
-  echo "<div class='col s4 m6 l3'><div class='card box'>";
+  echo "<div class='col s12 m6 l6'>";
+  echo "<div class='card'>";
   echo "<div class='card-image'><img src='".$book['img']."' /></div>";
-  echo "<div class='card-contents'><span class='booklist-card-title'>".$book['title']."</span>";
-    echo "<table>";
-    echo "<tr><td>著者</td><td>".$book['author']."</td></tr>";
-    echo "<tr><td>残り冊数</td><td>".$book['count']."冊</td></tr>";
-    echo "</table>";
+  echo "<div class='card-stacked'>";
+    echo "<div class='card-contents'><span class='booklist-card-title'>".$book['title']."</span>";
+      echo "<table>";
+      echo "<tr><td>著者</td><td>".$book['author']."</td></tr>";
+      echo "<tr><td>残り冊数</td><td>".$book['count']."冊</td></tr>";
+      echo "</table>";
+    echo "</div>";
+    echo "<div class='card-action'><a class='show_submit_dialog' onclick='showSubmitDialog($jsonBook);'>取り引き完了</a></div>";
   echo "</div>";
-  echo "<a class='show_submit_dialog' onclick='showSubmitDialog($jsonBook);'>取り引き完了</a>";
-  echo "</div></div>";
+  echo "</div>";
+  echo "</div>";
 }
 ?>
 </div></div>
@@ -62,8 +66,8 @@ foreach($books as $key => $book) {
 <table>
 <?php
 foreach($books as $book) {
-    echo "<tr><th>タイトル</th><th>著者</th><tr>";
-    echo "<tr><td>".$book["title"]."</td><td>".$book["author"]."</td></tr>";
+    // echo "<tr><th>タイトル</th><th>著者</th><tr>";
+    // echo "<tr><td>".$book["title"]."</td><td>".$book["author"]."</td></tr>";
     // debug($book);
 }
 ?>

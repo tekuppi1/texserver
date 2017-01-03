@@ -4,6 +4,7 @@ namespace App\Controller\Component;
 use Cake\Controller\Component;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
+use Cake\Routing\Router;
 
 class BookFuncComponent extends Component {
 
@@ -19,17 +20,32 @@ class BookFuncComponent extends Component {
 
     //Create Entry
     $BookEntry = array();
+    $BookEntry["img"]    = @$params['img']     ? $this->convertImage($params['isbn'], $params['img']) : null; // @←これ重要
     $BookEntry["title"]  = @$params['title']   ? $params['title']    : null; // @←これ重要
     $BookEntry["author"] = @$params['author']  ? $params['author']   : null; // @←これ重要
     $BookEntry["price"]  = @$params['price']   ? $params['price']    : null; // @←これ重要
     $BookEntry["cat_id"] = @$params['cat_id']  ? $params['cat_id']   : null; // @←これ重要
-    $BookEntry["img"]    = @$params['img']     ? $params['img']      : null; // @←これ重要
     $BookEntry["isbn"]   = @$params['isbn']    ? $params['isbn']     : null; // @←これ重要
     $BookEntry = $Books->newEntity($BookEntry);
 
     // バリデーションチェック
     if($BookEntry->errors()) return false;
-    return $Books->save($BookEntry);;
+    return $Books->save($BookEntry);
+  }
+
+  /**
+   * 本の画像をファイルに変換して、bookimageディレクトリに保存
+   * @param {String} url - 取り込む画像URL
+   * @return {String} 取り込んだ先のURL
+   */
+  private function convertImage($isbn, $url){
+    // $directoryPath = Router::url('/bookimage', true);
+    $directoryPath = "bookimage"; 
+    $imagePath = $directoryPath. "/" .$isbn;
+    $data = file_get_contents($url);
+    // ファイル書き出し(webroot配下にbookimageディレクトリを作成してください。)
+    file_put_contents($imagePath, $data);
+    return Router::url("/". $imagePath, true);
   }
 
   /**
@@ -48,8 +64,8 @@ class BookFuncComponent extends Component {
   }
 
   /**
-   * 本の一欄をフィルタエリング
-   * @param {Array} $books - 本一欄
+   * 本の一覧をフィルタエリング
+   * @param {Array} $books - 本一覧
    * @param {String} $filter - フィルタリングする文字列
    */
   private function filtering($books, $filter = null) {

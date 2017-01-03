@@ -26,6 +26,7 @@ class ExhibitController extends AppController {
         // xmlデータから出力用変換
         $itemList = array();
         foreach((array)$result['dataList'] as $key => $item) {
+            if(!$item["ISBN"]) continue;
             $itemList[$key] = array();
             $itemList[$key]['img'] = "http://images-jp.amazon.com/images/P/". $item["ASIN"] .".09.LZZZZZZZ";
             $itemList[$key]['title'] = $item["Title"];
