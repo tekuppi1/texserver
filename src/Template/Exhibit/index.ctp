@@ -47,12 +47,13 @@
 <!-- テーブル出力 -->
 <table>
 <?php
-foreach((array)$AmazonApiResult['dataList'] as $item) {
+foreach($itemList as $item) {
   $jsonItem = json_encode($item);
   echo "<tr>";
-  echo "<td>" . $item["Title"] . "</td>";
-  echo "<td>" . $item["Author"] . "</td>";
-  echo "<td>" . $item["Publisher"] . "</td>";
+  echo "<td>" . $item["title"] . "</td>";
+  echo "<td>" . $item["author"] . "</td>";
+  echo "<td>" . $item["publisher"] . "</td>";
+  echo "<td>" . "<img height='100' src='" . $item["img"] . "'>" . "</td>";
   echo "<td><a class='show_submit_dialog' onclick='showSubmitDialog($jsonItem);'>確認</a></td>";
   echo "</tr>";
 
@@ -71,19 +72,27 @@ foreach((array)$AmazonApiResult['dataList'] as $item) {
 <script language="javascript">
 function showSubmitDialog(item = {}) {
   console.log("showSubmitDialog", item);
+  jQuery("#dialog_form").attr("action","exhibit/add");
   jQuery("#dialog_header_text").text("登録確認");
   jQuery("#dialog_dismissive_text").text("CANCEL");
   jQuery("#dialog_affirmative_text").text("SUBMIT");
   // body部分
   jQuery("#dialog_body").empty();
-  jQuery("#dialog_body").append("<div class='book'><img src=" + item.img + " class='book-picture'></div>");
-  jQuery("#dialog_body").append("<table id='exhibit_dialog_content'></table>");
-  jQuery("#exhibit_dialog_content").append("<tr><td>タイトル：</td><td>" + item.Title + "</td></tr>");
-  jQuery("#exhibit_dialog_content").append("<tr><td>著者：</td><td>" + item.Author + "</td></tr>");
+  jQuery("#dialog_body")
+    .append("<div class='book'><img src=" + item.img + " class='book-picture'></div>")
+    .append("<table id='exhibit_dialog_content'></table>");
+  jQuery("#exhibit_dialog_content")
+    .append("<tr><td>タイトル：</td><td>" + item.title + "</td></tr>")
+    .append("<tr><td>著者：</td><td>" + item.author + "</td></tr>");
+  // POST部分
+  jQuery("#dialog_body")
+    .append(jQuery('<input/>', {type: 'hidden', name: 'img', value: item.img}))
+    .append(jQuery('<input/>', {type: 'hidden', name: 'title', value: item.title}))
+    .append(jQuery('<input/>', {type: 'hidden', name: 'author', value: item.author}))
+    .append(jQuery('<input/>', {type: 'hidden', name: 'isbn', value: item.isbn}));
   // 保留
   $('#dialog_affirmative').click(function() {
     console.log("dialogAffirmative");
-    //$('#form1').submit();
   });
 };
 </script>
